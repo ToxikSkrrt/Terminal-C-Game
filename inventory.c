@@ -50,19 +50,19 @@ void inventory_setShoulders(inventory_t inventory, item_t shoulders) {
 }
 
 void inventory_setTorso(inventory_t inventory, item_t torso) {
-  inventory.torso;
+  inventory.torso = torso;
 }
 
 void inventory_setHands(inventory_t inventory, item_t hands) {
-  inventory.hands;
+  inventory.hands = hands;
 }
 
 void inventory_setLegs(inventory_t inventory, item_t legs) {
-  inventory.legs;
+  inventory.legs = legs;
 }
 
 void inventory_setFeet(inventory_t inventory, item_t feet) {
-  inventory.feet;
+  inventory.feet = feet;
 }
 
 inventory_t inventory_create(item_t mainHand, item_t offHand, item_t head, item_t shoulders, item_t torso, item_t hands, item_t legs, item_t feet) {
