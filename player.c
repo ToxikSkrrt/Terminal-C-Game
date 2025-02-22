@@ -39,3 +39,9 @@ void player_setAtk(player_t player, int atk) {
 void player_setArmor(player_t player, int armor) {
   player.armor = armor;
 }
+
+player_t player_create(char *name, int level, int hp, int atk, int armor) {
+  player_t player = {name, level, hp, atk, armor};
+
+  return player;
+}
