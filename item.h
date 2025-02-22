@@ -8,7 +8,7 @@ typedef struct {
   int armor;
 } item_t;
 
-item_t EMPTY_ITEM = {"EMPTY", 0, 0, 0};
+extern item_t EMPTY_ITEM;
 
 char *item_getName(item_t item);
 int item_getHp(item_t item);
