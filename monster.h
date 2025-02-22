@@ -21,4 +21,6 @@ void monster_setHp(monster_t monster, int hp);
 void monster_setAtk(monster_t monster, int atk);
 void monster_setArmor(monster_t monster, int armor);
 
+monster_t monster_create(char *name, int level, int hp, int atk, int armor);
+
 #endif

@@ -39,3 +39,9 @@ void monster_setAtk(monster_t monster, int atk) {
 void monster_setArmor(monster_t monster, int armor) {
   monster.armor = armor;
 }
+
+monster_t monster_create(char *name, int level, int hp, int atk, int armor) {
+  monster_t monster = {name, level, hp, atk, armor};
+
+  return monster;
+}

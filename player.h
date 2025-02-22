@@ -21,4 +21,6 @@ void player_setHp(player_t player, int hp);
 void player_setAtk(player_t player, int atk);
 void player_setArmor(player_t player, int armor);
 
+player_t player_create(char *name, int level, int hp, int atk, int armor);
+
 #endif
