@@ -1,12 +1,14 @@
 #ifndef __ITEM_H__
 #define __ITEM_H__
 
-typedef struct {
+struct item_s {
   char *name;
   int hp;
   int atk;
   int armor;
-} item_t;
+};
+
+typedef struct item_s *item_t;
 
 extern item_t EMPTY_ITEM;
 
@@ -21,5 +23,7 @@ void item_setAtk(item_t item, int atk);
 void item_setArmor(item_t item, int armor);
 
 item_t item_create(char *name, int hp, int atk, int armor);
+item_t item_copy(item_t item);
+void item_delete(item_t item);
 
 #endif

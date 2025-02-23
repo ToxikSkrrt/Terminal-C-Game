@@ -1,41 +1,59 @@
+#include <stdlib.h>
+
 #include "item.h"
 
 item_t EMPTY_ITEM = {"No item", 0, 0, 0};
 
 char *item_getName(item_t item) {
-  return item.name;
+  return item->name;
 }
 
 int item_getHp(item_t item) {
-  return item.hp;
+  return item->hp;
 }
 
 int item_getAtk(item_t item) {
-  return item.atk;
+  return item->atk;
 }
 
 int item_getArmor(item_t item) {
-  return item.armor;
+  return item->armor;
 }
 
 void item_setName(item_t item, char *name) {
-  item.name = name;
+  item->name = name;
 }
 
 void item_setHp(item_t item, int hp) {
-  item.hp = hp;
+  item->hp = hp;
 }
 
 void item_setAtk(item_t item, int atk) {
-  item.atk = atk;
+  item->atk = atk;
 }
 
 void item_setArmor(item_t item, int armor) {
-  item.armor = armor;
+  item->armor = armor;
 }
 
 item_t item_create(char *name, int hp, int atk, int armor) {
-  item_t item = {name, hp, atk, armor};
+  item_t item = (item_t)malloc(sizeof(struct item_s));
+
+  item_setName(item, name);
+  item_setHp(item, hp);
+  item_setAtk(item, atk);
+  item_setArmor(item, armor);
 
   return item;
+}
+
+item_t item_copy(item_t item) {
+  item_t item_cpy = item_create(item_getName(item), item_getHp(item), item_getAtk(item), item_getArmor(item));
+
+  return item_cpy;
+}
+
+void item_delete(item_t item) {
+  free(item->name);
+  free(item);
 }
