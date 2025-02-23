@@ -1,13 +1,15 @@
 #ifndef __MONSTER_H__
 #define __MONSTER_H__
 
-typedef struct {
+struct monster_s {
   char *name;
   int level;
   int hp;
   int atk;
   int armor;
-} monster_t;
+};
+
+typedef struct monster_s *monster_t;
 
 char *monster_getName(monster_t monster);
 int monster_getLevel(monster_t monster);
@@ -22,5 +24,6 @@ void monster_setAtk(monster_t monster, int atk);
 void monster_setArmor(monster_t monster, int armor);
 
 monster_t monster_create(char *name, int level, int hp, int atk, int armor);
+void monster_delete(monster_t monster);
 
 #endif

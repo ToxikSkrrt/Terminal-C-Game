@@ -3,7 +3,7 @@
 
 #include "item.h"
 
-typedef struct {
+struct inventory_s {
   item_t mainHand;
   item_t offHand;
   item_t head;
@@ -12,7 +12,9 @@ typedef struct {
   item_t hands;
   item_t legs;
   item_t feet;
-} inventory_t;
+};
+
+typedef struct inventory_s *inventory_t;
 
 item_t inventory_getMainHand(inventory_t inventory);
 item_t inventory_getOffHand(inventory_t inventory);
@@ -33,5 +35,6 @@ void inventory_setLegs(inventory_t inventory, item_t legs);
 void inventory_setFeet(inventory_t inventory, item_t feet);
 
 inventory_t inventory_create(item_t mainHand, item_t offHand, item_t head, item_t shoulders, item_t torso, item_t hands, item_t legs, item_t feet);
+void inventory_delete(inventory_t inventory);
 
 #endif

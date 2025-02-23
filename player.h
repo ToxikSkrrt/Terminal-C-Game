@@ -3,14 +3,16 @@
 
 #include "inventory.h"
 
-typedef struct {
+typedef struct player_s {
   char *name;
   int level;
   int hp;
   int atk;
   int armor;
   inventory_t inventory;
-} player_t;
+};
+
+typedef struct player_s *player_t;
 
 char *player_getName(player_t player);
 int player_getLevel(player_t player);
@@ -27,5 +29,6 @@ void player_setArmor(player_t player, int armor);
 void player_setInventory(player_t player, inventory_t inventory);
 
 player_t player_create(char *name, int level, int hp, int atk, int armor);
+void player_delete(player_t player);
 
 #endif

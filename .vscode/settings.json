@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.FCMACRO": "python",
+        "stdlib.h": "c"
+    }
+}
