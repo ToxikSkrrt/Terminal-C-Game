@@ -2,8 +2,6 @@
 
 #include "item.h"
 
-item_t EMPTY_ITEM = {"No item", 0, 0, 0};
-
 char *item_getName(item_t item) {
   return item->name;
 }

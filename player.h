@@ -3,7 +3,7 @@
 
 #include "inventory.h"
 
-typedef struct player_s {
+struct player_s {
   char *name;
   int level;
   int hp;

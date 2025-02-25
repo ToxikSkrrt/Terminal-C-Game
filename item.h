@@ -10,8 +10,6 @@ struct item_s {
 
 typedef struct item_s *item_t;
 
-extern item_t EMPTY_ITEM;
-
 char *item_getName(item_t item);
 int item_getHp(item_t item);
 int item_getAtk(item_t item);
