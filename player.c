@@ -53,8 +53,6 @@ void player_setInventory(player_t player, inventory_t inventory) {
 }
 
 player_t player_create(char *name, int level, int hp, int atk, int armor) {
-  item_t EMPTY_ITEM = item_create("No item", 0, 0, 0);
-
   player_t player = (player_t)malloc(sizeof(sizeof(struct player_s)));
 
   player_setName(player, name);
@@ -63,6 +61,7 @@ player_t player_create(char *name, int level, int hp, int atk, int armor) {
   player_setAtk(player, atk);
   player_setArmor(player, armor);
 
+  item_t EMPTY_ITEM = item_create("No item", 0, 0, 0);
   inventory_t inventory = inventory_create(item_copy(EMPTY_ITEM), item_copy(EMPTY_ITEM), item_copy(EMPTY_ITEM), item_copy(EMPTY_ITEM), item_copy(EMPTY_ITEM), item_copy(EMPTY_ITEM), item_copy(EMPTY_ITEM), item_copy(EMPTY_ITEM));
 
   player_setInventory(player, inventory);
