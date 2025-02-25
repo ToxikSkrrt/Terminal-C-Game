@@ -2,9 +2,9 @@
 #include "player.h"
 
 void player_attack(player_t player, monster_t monster) {
-  monster.hp -= player.atk - monster.armor;
+  monster_setHp(monster, monster_getHp(monster) - player_getAtk(player) - monster_getArmor(monster));
 }
 
 void monster_attack(monster_t monster, player_t player) {
-  player.hp = monster.atk - player.armor;
+  player_setHp(player, player_getHp(player) - monster_getAtk(monster) - player_getArmor(player));
 }
