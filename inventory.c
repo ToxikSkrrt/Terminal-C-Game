@@ -94,3 +94,14 @@ void inventory_delete(inventory_t inventory) {
 
   free(inventory);
 }
+
+void inventory_showInfo(inventory_t inventory) {
+  printf("Main Hand: %s\n", item_getName(inventory_getMainHand(inventory)));
+  printf("Off Hand: %s\n", item_getName(inventory_getOffHand(inventory)));
+  printf("Head: %s\n", item_getName(inventory_getHead(inventory)));
+  printf("Shoulders: %s\n", item_getName(inventory_getShoulders(inventory)));
+  printf("Torso: %s\n", item_getName(inventory_getTorso(inventory)));
+  printf("Hands: %s\n", item_getName(inventory_getHands(inventory)));
+  printf("Legs: %s\n", item_getName(inventory_getLegs(inventory)));
+  printf("Feet: %s\n", item_getName(inventory_getFeet(inventory)));
+}

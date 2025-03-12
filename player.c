@@ -75,3 +75,16 @@ void player_delete(player_t player) {
 
   free(player);
 }
+
+void player_showInfo(player_t player) {
+  printf("- - - - - - -");
+  printf("Name: %s\n", player_getName(player));
+  printf("Level  %d\n", player_getLevel(player));
+  printf("HP: %d\n", player_getHp(player));
+  printf("Attack: %d\n", player_getAtk(player));
+  printf("Armor: %d\n\n", player_getArmor(player));
+  printf("- - - - - - -");
+  prinf("Inventory:");
+  inventory_showInfo(player_getInventory(player));
+  printf("- - - - - - -");
+}

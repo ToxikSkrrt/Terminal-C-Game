@@ -36,5 +36,6 @@ void inventory_setFeet(inventory_t inventory, item_t feet);
 
 inventory_t inventory_create(item_t mainHand, item_t offHand, item_t head, item_t shoulders, item_t torso, item_t hands, item_t legs, item_t feet);
 void inventory_delete(inventory_t inventory);
+void inventory_showInfo(inventory_t inventory);
 
 #endif
