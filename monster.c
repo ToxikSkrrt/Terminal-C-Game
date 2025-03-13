@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 
 #include "inventory.h"
@@ -73,4 +74,17 @@ void monster_delete(monster_t monster) {
   inventory_delete(monster->inventory);
 
   free(monster);
+}
+
+void monster_showInfo(monster_t monster) {
+  printf("***************************\n");
+  printf("Name: %s\n", monster_getName(monster));
+  printf("Level  %d\n", monster_getLevel(monster));
+  printf("HP: %d\n", monster_getHp(monster));
+  printf("Attack: %d\n", monster_getAtk(monster));
+  printf("Armor: %d\n", monster_getArmor(monster));
+  printf("***************************\n");
+  printf("Inventory:\n");
+  inventory_showInfo(monster_getInventory(monster));
+  printf("***************************\n");
 }

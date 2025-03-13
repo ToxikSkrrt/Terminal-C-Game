@@ -14,26 +14,18 @@ void monster_attack(monster_t monster, player_t player) {
 }
 
 void runGame() {
-  bool isRunning = true;
+  // bool isRunning = true;
 
   player_t player = player_create("Toxik", 1, 10, 2, 0);
   printf("NEW PLAYER CREATED !\n");
-  printf("Name: %s\n", player_getName(player));
-  printf("Level  %d\n", player_getLevel(player));
-  printf("HP: %d\n", player_getHp(player));
-  printf("Attack: %d\n", player_getAtk(player));
-  printf("Armor: %d\n\n", player_getArmor(player));
+  player_showInfo(player);
 
-  printf("------------------------\n\n");
+  printf("\n");
 
   monster_t monster = monster_create("Garrosh", 1, 5, 1, 1);
   printf("NEW MONSTER CREATED !\n");
-  printf("Name: %s\n", monster_getName(monster));
-  printf("Level  %d\n", monster_getLevel(monster));
-  printf("HP: %d\n", monster_getHp(monster));
-  printf("Attack: %d\n", monster_getAtk(monster));
-  printf("Armor: %d\n", monster_getArmor(monster));
+  monster_showInfo(monster);
 
-  while (isRunning)
-    ;
+  // while (isRunning)
+  //   ;
 }

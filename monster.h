@@ -30,5 +30,6 @@ void monster_setInventory(monster_t monster, inventory_t inventory);
 
 monster_t monster_create(char *name, int level, int hp, int atk, int armor);
 void monster_delete(monster_t monster);
+void monster_showInfo(monster_t monster);
 
 #endif

@@ -55,3 +55,10 @@ void item_delete(item_t item) {
   free(item->name);
   free(item);
 }
+
+void item_showInfo(item_t item) {
+  printf("Name: %s\n", item_getName(item));
+  printf("HP: %d\n", item_getHp(item));
+  printf("Attack: %d\n", item_getAtk(item));
+  printf("Armor: %d\n", item_getArmor(item));
+}
