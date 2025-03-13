@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.25)
 project(Terminal-C-Game)
 
 link_directories(${CMAKE_SOURCE_DIR})
-set(CMAKE_C_FLAGS "-Wall -std=c99")
+set(CMAKE_C_FLAGS "-Wall")
 
 add_library(game player.c monster.c game.c inventory.c item.c)
 
