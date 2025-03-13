@@ -56,8 +56,7 @@ void runGame() {
   sleep_ms(900);
   sleepPrint("...", 1000);
 
-  sleep(3);
-
+  sleep(2);
   consoleClear();
 
   player_t player = player_create("Toxik", 1, 10, 2, 0);
@@ -67,8 +66,7 @@ void runGame() {
   player_showInfo(player);
 
   sleep(2);
-
-  printf("\n\n");
+  consoleClear();
 
   monster_t monster = monster_create("Garrosh", 1, 5, 1, 1);
   sleepPrint("NEW MONSTER CREATED !", 100);
@@ -80,10 +78,12 @@ void runGame() {
   consoleClear();
 
   while (true) {
-    printf("[1] Attack\n[2] Use an item\n[3] Retreat\n[Q] Quit the game");
+    printf("[1] Attack\n");
+    printf("[2] Use an item\n");
+    printf("[3] Retreat\n");
+    printf("[Q] Quit the game\n");
 
     char ch;
-
     ch = getch();
 
     consoleClear();
