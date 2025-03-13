@@ -20,7 +20,7 @@ void runGame() {
   printf("NEW PLAYER CREATED !\n");
   player_showInfo(player);
 
-  printf("\n");
+  printf("\n\n");
 
   monster_t monster = monster_create("Garrosh", 1, 5, 1, 1);
   printf("NEW MONSTER CREATED !\n");
