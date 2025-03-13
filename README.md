@@ -6,7 +6,7 @@
 cd build/
 cmake ..
 make
-./main <args>
+./main
 ```
 
 You can clean a bit the `build/` folder with `make clean`.
