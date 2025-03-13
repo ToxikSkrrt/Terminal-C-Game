@@ -4,6 +4,9 @@
 #include "monster.h"
 #include "player.h"
 
+char getch();
+void sleepPrint(char *input, int delay);
+
 void player_attack(player_t player, monster_t monster);
 void monster_attack(monster_t monster, player_t player);
 

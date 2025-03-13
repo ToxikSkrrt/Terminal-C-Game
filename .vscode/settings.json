@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "*.FCMACRO": "python",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "unistd.h": "c",
+        "time.h": "c"
     }
 }
