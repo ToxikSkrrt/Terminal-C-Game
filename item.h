@@ -23,5 +23,6 @@ void item_setArmor(item_t item, int armor);
 item_t item_create(char *name, int hp, int atk, int armor);
 item_t item_copy(item_t item);
 void item_delete(item_t item);
+void item_showInfo(item_t item);
 
 #endif

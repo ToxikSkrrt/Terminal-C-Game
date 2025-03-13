@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 
 #include "inventory.h"
@@ -77,14 +78,14 @@ void player_delete(player_t player) {
 }
 
 void player_showInfo(player_t player) {
-  printf("- - - - - - -");
+  printf("***************************\n");
   printf("Name: %s\n", player_getName(player));
   printf("Level  %d\n", player_getLevel(player));
   printf("HP: %d\n", player_getHp(player));
   printf("Attack: %d\n", player_getAtk(player));
-  printf("Armor: %d\n\n", player_getArmor(player));
-  printf("- - - - - - -");
-  prinf("Inventory:");
+  printf("Armor: %d\n", player_getArmor(player));
+  printf("***************************\n");
+  printf("Inventory:\n");
   inventory_showInfo(player_getInventory(player));
-  printf("- - - - - - -");
+  printf("***************************\n");
 }
