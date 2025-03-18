@@ -4,6 +4,7 @@
 #include "inventory.h"
 #include "item.h"
 #include "player.h"
+#include "tools.h"
 
 char *player_getName(player_t player) {
   return player->name;
@@ -78,14 +79,35 @@ void player_delete(player_t player) {
 }
 
 void player_showInfo(player_t player) {
+  char str[10];
   printf("***************************\n");
-  printf("Name: %s\n", player_getName(player));
-  printf("Level  %d\n", player_getLevel(player));
-  printf("HP: %d\n", player_getHp(player));
-  printf("Attack: %d\n", player_getAtk(player));
-  printf("Armor: %d\n", player_getArmor(player));
+  // printf("Name: %s\n", player_getName(player));
+  sleepPrint("Name: ", 100);
+  sleepPrint(player_getName(player), 100);
+  printf("\n");
+  // printf("\nLevel  %d\n", player_getLevel(player));
+  sleepPrint("Level: ", 100);
+  sprintf(str, "%d", player_getLevel(player));
+  sleepPrint(str, 100);
+  printf("\n");
+  // printf("\nHP: %d\n", player_getHp(player));
+  sleepPrint("HP: ", 100);
+  sprintf(str, "%d", player_getHp(player));
+  sleepPrint(str, 100);
+  printf("\n");
+  // printf("Attack: %d\n", player_getAtk(player));
+  sleepPrint("Attack: ", 100);
+  sprintf(str, "%d", player_getAtk(player));
+  sleepPrint(str, 100);
+  printf("\n");
+  // printf("Armor: %d\n", player_getArmor(player));
+  sleepPrint("Armor: ", 100);
+  sprintf(str, "%d", player_getArmor(player));
+  sleepPrint(str, 100);
+  printf("\n");
   printf("***************************\n");
-  printf("Inventory:\n");
+  sleepPrint("Inventory:", 100);
+  printf("\n");
   inventory_showInfo(player_getInventory(player));
   printf("***************************\n");
 }

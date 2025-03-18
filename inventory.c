@@ -3,6 +3,7 @@
 
 #include "inventory.h"
 #include "item.h"
+#include "tools.h"
 
 item_t inventory_getMainHand(inventory_t inventory) {
   return inventory->mainHand;
@@ -97,12 +98,28 @@ void inventory_delete(inventory_t inventory) {
 }
 
 void inventory_showInfo(inventory_t inventory) {
-  printf("Main Hand: %s\n", item_getName(inventory_getMainHand(inventory)));
-  printf("Off Hand: %s\n", item_getName(inventory_getOffHand(inventory)));
-  printf("Head: %s\n", item_getName(inventory_getHead(inventory)));
-  printf("Shoulders: %s\n", item_getName(inventory_getShoulders(inventory)));
-  printf("Torso: %s\n", item_getName(inventory_getTorso(inventory)));
-  printf("Hands: %s\n", item_getName(inventory_getHands(inventory)));
-  printf("Legs: %s\n", item_getName(inventory_getLegs(inventory)));
-  printf("Feet: %s\n", item_getName(inventory_getFeet(inventory)));
+  sleepPrint("Main Hand: ", 100);
+  sleepPrint(item_getName(inventory_getMainHand(inventory)), 100);
+  printf("\n");
+  sleepPrint("Off Hand: ", 100);
+  sleepPrint(item_getName(inventory_getOffHand(inventory)), 100);
+  printf("\n");
+  sleepPrint("Head: ", 100);
+  sleepPrint(item_getName(inventory_getHead(inventory)), 100);
+  printf("\n");
+  sleepPrint("Shoulders: ", 100);
+  sleepPrint(item_getName(inventory_getShoulders(inventory)), 100);
+  printf("\n");
+  sleepPrint("Torso: ", 100);
+  sleepPrint(item_getName(inventory_getTorso(inventory)), 100);
+  printf("\n");
+  sleepPrint("Hands: ", 100);
+  sleepPrint(item_getName(inventory_getHands(inventory)), 100);
+  printf("\n");
+  sleepPrint("Legs: ", 100);
+  sleepPrint(item_getName(inventory_getLegs(inventory)), 100);
+  printf("\n");
+  sleepPrint("Feet: ", 100);
+  sleepPrint(item_getName(inventory_getFeet(inventory)), 100);
+  printf("\n");
 }
