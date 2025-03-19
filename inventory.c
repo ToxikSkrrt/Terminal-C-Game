@@ -98,28 +98,28 @@ void inventory_delete(inventory_t inventory) {
 }
 
 void inventory_showInfo(inventory_t inventory) {
-  sleepPrint("Main Hand: ", 100);
-  sleepPrint(item_getName(inventory_getMainHand(inventory)), 100);
-  sleepPrint("\n", 100);
-  sleepPrint("Off Hand: ", 100);
-  sleepPrint(item_getName(inventory_getOffHand(inventory)), 100);
-  sleepPrint("\n", 100);
-  sleepPrint("Head: ", 100);
-  sleepPrint(item_getName(inventory_getHead(inventory)), 100);
-  sleepPrint("\n", 100);
-  sleepPrint("Shoulders: ", 100);
-  sleepPrint(item_getName(inventory_getShoulders(inventory)), 100);
-  sleepPrint("\n", 100);
-  sleepPrint("Torso: ", 100);
-  sleepPrint(item_getName(inventory_getTorso(inventory)), 100);
-  sleepPrint("\n", 100);
-  sleepPrint("Hands: ", 100);
-  sleepPrint(item_getName(inventory_getHands(inventory)), 100);
-  sleepPrint("\n", 100);
-  sleepPrint("Legs: ", 100);
-  sleepPrint(item_getName(inventory_getLegs(inventory)), 100);
-  sleepPrint("\n", 100);
-  sleepPrint("Feet: ", 100);
-  sleepPrint(item_getName(inventory_getFeet(inventory)), 100);
-  sleepPrint("\n", 100);
+  sleepPrint("Main Hand: ", TEXTSPEED);
+  sleepPrint(item_getName(inventory_getMainHand(inventory)), TEXTSPEED);
+  sleepPrint("\n", TEXTSPEED);
+  sleepPrint("Off Hand: ", TEXTSPEED);
+  sleepPrint(item_getName(inventory_getOffHand(inventory)), TEXTSPEED);
+  sleepPrint("\n", TEXTSPEED);
+  sleepPrint("Head: ", TEXTSPEED);
+  sleepPrint(item_getName(inventory_getHead(inventory)), TEXTSPEED);
+  sleepPrint("\n", TEXTSPEED);
+  sleepPrint("Shoulders: ", TEXTSPEED);
+  sleepPrint(item_getName(inventory_getShoulders(inventory)), TEXTSPEED);
+  sleepPrint("\n", TEXTSPEED);
+  sleepPrint("Torso: ", TEXTSPEED);
+  sleepPrint(item_getName(inventory_getTorso(inventory)), TEXTSPEED);
+  sleepPrint("\n", TEXTSPEED);
+  sleepPrint("Hands: ", TEXTSPEED);
+  sleepPrint(item_getName(inventory_getHands(inventory)), TEXTSPEED);
+  sleepPrint("\n", TEXTSPEED);
+  sleepPrint("Legs: ", TEXTSPEED);
+  sleepPrint(item_getName(inventory_getLegs(inventory)), TEXTSPEED);
+  sleepPrint("\n", TEXTSPEED);
+  sleepPrint("Feet: ", TEXTSPEED);
+  sleepPrint(item_getName(inventory_getFeet(inventory)), TEXTSPEED);
+  sleepPrint("\n", TEXTSPEED);
 }

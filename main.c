@@ -6,7 +6,11 @@
 #include "player.h"
 
 int main(int argc, char **argv) {
-  runGame();
+  if (argc == 1) {
+    system("gnome-terminal -- bash -c './main new_terminal'");
+  } else {
+    runGame();
 
-  return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
+  }
 }

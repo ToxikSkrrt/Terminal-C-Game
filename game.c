@@ -19,10 +19,10 @@ void monster_attack(monster_t monster, player_t player) {
 }
 
 void runGame() {
-  consoleClear();
+  printf("\e[?25l");
   sleep(1);
 
-  sleepPrint("START GAME", 100);
+  sleepPrint("START GAME", TEXTSPEED);
   sleep_ms(900);
   sleepPrint("...", 1000);
 
@@ -30,18 +30,16 @@ void runGame() {
   consoleClear();
 
   player_t player = player_create("Toxik", 1, 10, 2, 0);
-  sleepPrint("NEW PLAYER CREATED !", 100);
+  sleepPrint("NEW PLAYER CREATED !\n", TEXTSPEED);
   sleep(1);
-  printf("\n");
   player_showInfo(player);
 
   sleep(1);
   consoleClear();
 
   monster_t monster = monster_create("Garrosh", 1, 5, 1, 1);
-  sleepPrint("NEW MONSTER CREATED !", 100);
+  sleepPrint("NEW MONSTER CREATED !\n", TEXTSPEED);
   sleep(1);
-  printf("\n");
   monster_showInfo(monster);
 
   sleep(1);
@@ -51,7 +49,7 @@ void runGame() {
     printf("[A] Attack\n");
     printf("[E] Use an item\n");
     printf("[R] Retreat\n");
-    printf("[Q] Quit the game\n");
+    printf("[Q] Quit the game");
 
     char ch;
     ch = getch();
@@ -59,7 +57,7 @@ void runGame() {
     consoleClear();
 
     if (ch == 'q') {
-      sleepPrint("Thanks for playing !", 100);
+      sleepPrint("Thanks for playing !", TEXTSPEED);
       sleep(2);
       consoleClear();
       break;
@@ -76,4 +74,5 @@ void runGame() {
 
     consoleClear();
   }
+  printf("\e[?25h");
 }
