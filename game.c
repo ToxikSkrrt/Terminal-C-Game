@@ -30,8 +30,9 @@ void runGame() {
   consoleClear();
 
   player_t player = player_create("Toxik", 1, 10, 2, 0);
-  sleepPrint("NEW PLAYER CREATED !\n", TEXTSPEED);
+  sleepPrint("NEW PLAYER CREATED !", TEXTSPEED);
   sleep(1);
+  consoleClear();
   player_showInfo(player);
 
   sleep(1);
