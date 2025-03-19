@@ -26,7 +26,7 @@ void runGame() {
   sleep_ms(900);
   sleepPrint("...", 1000);
 
-  sleep(2);
+  sleep(1);
   consoleClear();
 
   player_t player = player_create("Toxik", 1, 10, 2, 0);
@@ -35,7 +35,7 @@ void runGame() {
   printf("\n");
   player_showInfo(player);
 
-  sleep(2);
+  sleep(1);
   consoleClear();
 
   monster_t monster = monster_create("Garrosh", 1, 5, 1, 1);
@@ -44,13 +44,13 @@ void runGame() {
   printf("\n");
   monster_showInfo(monster);
 
-  sleep(2);
+  sleep(1);
   consoleClear();
 
   while (true) {
-    printf("[1] Attack\n");
-    printf("[2] Use an item\n");
-    printf("[3] Retreat\n");
+    printf("[A] Attack\n");
+    printf("[E] Use an item\n");
+    printf("[R] Retreat\n");
     printf("[Q] Quit the game\n");
 
     char ch;
@@ -63,11 +63,11 @@ void runGame() {
       sleep(2);
       consoleClear();
       break;
-    } else if (ch == '1')
+    } else if (ch == 'a')
       printf("=> Attack !\n");
-    else if (ch == '2')
+    else if (ch == 'e')
       printf("=> Item used !\n");
-    else if (ch == '3')
+    else if (ch == 'r')
       printf("=> Retreat !\n");
     else
       printf("=> Not implemented.\n");

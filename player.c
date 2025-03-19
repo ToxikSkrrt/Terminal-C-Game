@@ -80,34 +80,29 @@ void player_delete(player_t player) {
 
 void player_showInfo(player_t player) {
   char str[10];
-  printf("***************************\n");
-  // printf("Name: %s\n", player_getName(player));
+  sleepPrint("***************************\n", 10);
+  sleepPrint("Infos:\n", 100);
   sleepPrint("Name: ", 100);
   sleepPrint(player_getName(player), 100);
-  printf("\n");
-  // printf("\nLevel  %d\n", player_getLevel(player));
+  sleepPrint("\n", 100);
   sleepPrint("Level: ", 100);
   sprintf(str, "%d", player_getLevel(player));
   sleepPrint(str, 100);
-  printf("\n");
-  // printf("\nHP: %d\n", player_getHp(player));
+  sleepPrint("\n", 100);
   sleepPrint("HP: ", 100);
   sprintf(str, "%d", player_getHp(player));
   sleepPrint(str, 100);
-  printf("\n");
-  // printf("Attack: %d\n", player_getAtk(player));
+  sleepPrint("\n", 100);
   sleepPrint("Attack: ", 100);
   sprintf(str, "%d", player_getAtk(player));
   sleepPrint(str, 100);
-  printf("\n");
-  // printf("Armor: %d\n", player_getArmor(player));
+  sleepPrint("\n", 100);
   sleepPrint("Armor: ", 100);
   sprintf(str, "%d", player_getArmor(player));
   sleepPrint(str, 100);
-  printf("\n");
-  printf("***************************\n");
-  sleepPrint("Inventory:", 100);
-  printf("\n");
+  sleepPrint("\n", 100);
+  sleepPrint("***************************\n", 10);
+  sleepPrint("Inventory:\n", 100);
   inventory_showInfo(player_getInventory(player));
-  printf("***************************\n");
+  sleepPrint("***************************\n", 10);
 }

@@ -100,26 +100,26 @@ void inventory_delete(inventory_t inventory) {
 void inventory_showInfo(inventory_t inventory) {
   sleepPrint("Main Hand: ", 100);
   sleepPrint(item_getName(inventory_getMainHand(inventory)), 100);
-  printf("\n");
+  sleepPrint("\n", 100);
   sleepPrint("Off Hand: ", 100);
   sleepPrint(item_getName(inventory_getOffHand(inventory)), 100);
-  printf("\n");
+  sleepPrint("\n", 100);
   sleepPrint("Head: ", 100);
   sleepPrint(item_getName(inventory_getHead(inventory)), 100);
-  printf("\n");
+  sleepPrint("\n", 100);
   sleepPrint("Shoulders: ", 100);
   sleepPrint(item_getName(inventory_getShoulders(inventory)), 100);
-  printf("\n");
+  sleepPrint("\n", 100);
   sleepPrint("Torso: ", 100);
   sleepPrint(item_getName(inventory_getTorso(inventory)), 100);
-  printf("\n");
+  sleepPrint("\n", 100);
   sleepPrint("Hands: ", 100);
   sleepPrint(item_getName(inventory_getHands(inventory)), 100);
-  printf("\n");
+  sleepPrint("\n", 100);
   sleepPrint("Legs: ", 100);
   sleepPrint(item_getName(inventory_getLegs(inventory)), 100);
-  printf("\n");
+  sleepPrint("\n", 100);
   sleepPrint("Feet: ", 100);
   sleepPrint(item_getName(inventory_getFeet(inventory)), 100);
-  printf("\n");
+  sleepPrint("\n", 100);
 }

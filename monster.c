@@ -3,6 +3,7 @@
 
 #include "inventory.h"
 #include "monster.h"
+#include "tools.h"
 
 char *monster_getName(monster_t monster) {
   return monster->name;
@@ -77,14 +78,30 @@ void monster_delete(monster_t monster) {
 }
 
 void monster_showInfo(monster_t monster) {
-  printf("***************************\n");
-  printf("Name: %s\n", monster_getName(monster));
-  printf("Level  %d\n", monster_getLevel(monster));
-  printf("HP: %d\n", monster_getHp(monster));
-  printf("Attack: %d\n", monster_getAtk(monster));
-  printf("Armor: %d\n", monster_getArmor(monster));
-  printf("***************************\n");
-  printf("Inventory:\n");
+  char str[10];
+  sleepPrint("***************************\n", 10);
+  sleepPrint("Infos:\n", 100);
+  sleepPrint("Name: ", 100);
+  sleepPrint(monster_getName(monster), 100);
+  sleepPrint("\n", 100);
+  sleepPrint("Level: ", 100);
+  sprintf(str, "%d", monster_getLevel(monster));
+  sleepPrint(str, 100);
+  sleepPrint("\n", 100);
+  sleepPrint("HP: ", 100);
+  sprintf(str, "%d", monster_getHp(monster));
+  sleepPrint(str, 100);
+  sleepPrint("\n", 100);
+  sleepPrint("Attack: ", 100);
+  sprintf(str, "%d", monster_getAtk(monster));
+  sleepPrint(str, 100);
+  sleepPrint("\n", 100);
+  sleepPrint("Armor: ", 100);
+  sprintf(str, "%d", monster_getArmor(monster));
+  sleepPrint(str, 100);
+  sleepPrint("\n", 100);
+  sleepPrint("***************************\n", 10);
+  sleepPrint("Inventory:\n", 100);
   inventory_showInfo(monster_getInventory(monster));
-  printf("***************************\n");
+  sleepPrint("***************************\n", 10);
 }
