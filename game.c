@@ -37,13 +37,13 @@ void runGame() {
   sleep(1);
   consoleClear();
 
-  monster_t monster = monster_create("Garrosh", 1, 5, 1, 1);
-  sleepPrint("NEW MONSTER CREATED !\n", TEXTSPEED);
-  sleep(1);
-  monster_showInfo(monster);
+  // monster_t monster = monster_create("Garrosh", 1, 5, 1, 1);
+  // sleepPrint("NEW MONSTER CREATED !\n", TEXTSPEED);
+  // sleep(1);
+  // monster_showInfo(monster);
 
-  sleep(1);
-  consoleClear();
+  // sleep(1);
+  // consoleClear();
 
   while (true) {
     printf("[A] Attack\n");
