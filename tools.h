@@ -7,5 +7,7 @@ void consoleClear();
 char getch();
 void sleep_ms(int milliseconds);
 void sleepPrint(char *input, int delay);
+void hideCursor();
+void showCursor();
 
 #endif

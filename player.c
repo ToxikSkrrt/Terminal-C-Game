@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -78,7 +79,7 @@ void player_delete(player_t player) {
   free(player);
 }
 
-void player_showInfo(player_t player) {
+void player_showInfo(player_t player, bool showInventory) {
   char str[10];
   sleepPrint("***************************\n", 10);
   sleepPrint("Infos:\n", TEXTSPEED);
@@ -102,7 +103,9 @@ void player_showInfo(player_t player) {
   sleepPrint(str, TEXTSPEED);
   sleepPrint("\n", TEXTSPEED);
   sleepPrint("***************************\n", 10);
-  sleepPrint("Inventory:\n", TEXTSPEED);
-  inventory_showInfo(player_getInventory(player));
-  sleepPrint("***************************\n", 10);
+  if (showInventory) {
+    sleepPrint("Inventory:\n", TEXTSPEED);
+    inventory_showInfo(player_getInventory(player));
+    sleepPrint("***************************\n", 10);
+  }
 }

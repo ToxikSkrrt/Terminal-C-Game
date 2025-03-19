@@ -13,11 +13,14 @@ void consoleClear() {
 char getch() {
   struct termios oldt, newt;
   char ch;
+
   tcgetattr(STDIN_FILENO, &oldt);
   newt = oldt;
   newt.c_lflag &= ~(ICANON | ECHO);
   tcsetattr(STDIN_FILENO, TCSANOW, &newt);
-  ch = getchar();
+
+  ch = getchar(); // Read single character without Enter
+
   tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
   return ch;
 }
@@ -35,4 +38,12 @@ void sleepPrint(char *input, int delay) {
     fflush(stdout);
     sleep_ms(delay);
   }
+}
+
+void hideCursor() {
+  printf("\e[?25l");
+}
+
+void showCursor() {
+  printf("\e[?25h");
 }

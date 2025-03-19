@@ -19,7 +19,7 @@ void monster_attack(monster_t monster, player_t player) {
 }
 
 void runGame() {
-  printf("\e[?25l");
+  hideCursor();
   sleep(1);
 
   sleepPrint("START GAME", TEXTSPEED);
@@ -29,11 +29,20 @@ void runGame() {
   sleep(1);
   consoleClear();
 
-  player_t player = player_create("Toxik", 1, 10, 2, 0);
+  char scanInput[10];
+  sleepPrint("Enter your name: ", TEXTSPEED);
+  showCursor();
+  fgets(scanInput, 10, stdin);
+  scanInput[strcspn(scanInput, "\n")] = '\0';
+  hideCursor();
+
+  consoleClear();
+
+  player_t player = player_create(scanInput, 1, 10, 2, 0);
   sleepPrint("NEW PLAYER CREATED !", TEXTSPEED);
   sleep(1);
   consoleClear();
-  player_showInfo(player);
+  player_showInfo(player, false);
 
   sleep(1);
   consoleClear();
@@ -52,8 +61,9 @@ void runGame() {
     printf("[R] Retreat\n");
     printf("[Q] Quit the game");
 
-    char ch;
-    ch = getch();
+    fflush(stdin);
+
+    char ch = getch();
 
     consoleClear();
 
@@ -75,5 +85,4 @@ void runGame() {
 
     consoleClear();
   }
-  printf("\e[?25h");
 }

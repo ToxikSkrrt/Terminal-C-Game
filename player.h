@@ -1,6 +1,8 @@
 #ifndef __PLAYER_H__
 #define __PLAYER_H__
 
+#include <stdbool.h>
+
 #include "inventory.h"
 
 struct player_s {
@@ -30,6 +32,6 @@ void player_setInventory(player_t player, inventory_t inventory);
 
 player_t player_create(char *name, int level, int hp, int atk, int armor);
 void player_delete(player_t player);
-void player_showInfo(player_t player);
+void player_showInfo(player_t player, bool showInventory);
 
 #endif
