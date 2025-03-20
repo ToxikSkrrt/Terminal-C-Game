@@ -27,14 +27,23 @@ void runGame() {
   sleepPrint("...", 1000);
 
   sleep(1);
-  consoleClear();
 
-  char scanInput[10];
-  sleepPrint("Enter your name: ", TEXTSPEED);
-  showCursor();
-  fgets(scanInput, 10, stdin);
-  scanInput[strcspn(scanInput, "\n")] = '\0';
-  hideCursor();
+  char scanInput[9999];
+  do {
+    consoleClear();
+    sleepPrint("Enter your name (max 10 characters): ", TEXTSPEED);
+    showCursor();
+    fgets(scanInput, sizeof(scanInput), stdin);
+    scanInput[strcspn(scanInput, "\n")] = '\0';
+    hideCursor();
+
+    if (strlen(scanInput) > 10) {
+      consoleClear();
+      sleepPrint("Name too long !", TEXTSPEED);
+      sleep(1);
+      fflush(stdin);
+    }
+  } while (strlen(scanInput) > 10);
 
   consoleClear();
 
