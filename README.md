@@ -1,4 +1,4 @@
-# Terminal-C-Game
+# TCG : Terminal C Game
 
 ## Usage
 
