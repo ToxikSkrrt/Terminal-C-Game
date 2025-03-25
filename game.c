@@ -18,10 +18,7 @@ void monster_attack(monster_t monster, player_t player) {
   player_setHp(player, player_getHp(player) - monster_getAtk(monster) - player_getArmor(player));
 }
 
-void runGame() {
-  hideCursor();
-  sleep(1);
-
+void startGame() {
   sleepPrint("START GAME", TEXTSPEED);
   sleep_ms(900);
   sleepPrint("...", 1000);
@@ -77,10 +74,10 @@ void runGame() {
     consoleClear();
 
     if (ch == 'q') {
-      sleepPrint("Thanks for playing !", TEXTSPEED);
+      sleepPrint("Exiting...", TEXTSPEED);
       sleep(2);
       consoleClear();
-      break;
+      return;
     } else if (ch == 'a')
       printf("=> Attack !\n");
     else if (ch == 'e')
@@ -91,6 +88,58 @@ void runGame() {
       printf("=> Not implemented.\n");
 
     sleep(1);
+
+    consoleClear();
+  }
+}
+
+void runGame() {
+  hideCursor();
+  sleep(1);
+
+  int value = 0;
+
+  while (true) {
+    if (value == 0)
+      printf("=> Start game\n");
+    else
+      printf("   Start game\n");
+    if (value == 1)
+      printf("=> Settings\n");
+    else
+      printf("   Settings\n");
+    if (value == 2)
+      printf("=> Quit game\n");
+    else
+      printf("   Quit game\n");
+
+    fflush(stdin);
+
+    char ch = getch();
+    if (ch == '\033') {
+      getch();
+      switch (getch()) {
+      case 'A':
+        if (value > 0)
+          value--;
+        break;
+      case 'B':
+        if (value < 2)
+          value++;
+        break;
+      }
+    } else if (ch == '\n') {
+      consoleClear();
+
+      if (value == 0) {
+        startGame();
+        break;
+      } else if (value == 1) {
+        continue;
+      } else {
+        break;
+      }
+    }
 
     consoleClear();
   }

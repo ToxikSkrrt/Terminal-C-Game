@@ -7,6 +7,7 @@
 void player_attack(player_t player, monster_t monster);
 void monster_attack(monster_t monster, player_t player);
 
+void startGame();
 void runGame();
 
 #endif
