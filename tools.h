@@ -1,7 +1,7 @@
 #ifndef __TOOLS_H__
 #define __TOOLS_H__
 
-#define TEXTSPEED 70
+#define TEXTSPEED 40
 
 void consoleClear();
 char getch();
