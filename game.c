@@ -45,6 +45,15 @@ void startGame() {
   consoleClear();
 
   player_t player = player_create(scanInput, 1, 10, 2, 0);
+
+  FILE *player_data = fopen("data/player_data.txt", "w");
+  fprintf(player_data, "player_name: %s\n", player_getName(player));
+  fprintf(player_data, "player_level: %d\n", player_getLevel(player));
+  fprintf(player_data, "player_hp: %d\n", player_getHp(player));
+  fprintf(player_data, "player_atk: %d\n", player_getAtk(player));
+  fprintf(player_data, "player_armor: %d\n", player_getArmor(player));
+  fclose(player_data);
+
   sleepPrint("NEW PLAYER CREATED !", TEXTSPEED);
   sleep(1);
   consoleClear();
@@ -52,14 +61,6 @@ void startGame() {
 
   sleep(1);
   consoleClear();
-
-  // monster_t monster = monster_create("Garrosh", 1, 5, 1, 1);
-  // sleepPrint("NEW MONSTER CREATED !\n", TEXTSPEED);
-  // sleep(1);
-  // monster_showInfo(monster);
-
-  // sleep(1);
-  // consoleClear();
 
   while (true) {
     printf("[A] Attack\n");
@@ -101,9 +102,9 @@ void runGame() {
 
   while (true) {
     if (value == 0)
-      printf("=> Start game\n");
+      printf("=> New game\n");
     else
-      printf("   Start game\n");
+      printf("   New game\n");
     if (value == 1)
       printf("=> Settings\n");
     else
