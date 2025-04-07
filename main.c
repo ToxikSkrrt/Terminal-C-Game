@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
       printf("No supported terminal found.\n");
     }
   } else {
-    runGame();
+    launchGame();
 
     return EXIT_SUCCESS;
   }

@@ -1,6 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "inventory.h"
 #include "item.h"
@@ -31,8 +32,12 @@ inventory_t player_getInventory(player_t player) {
   return player->inventory;
 }
 
-void player_setName(player_t player, char *name) {
-  player->name = name;
+void player_setName(player_t player, const char *name) {
+  if (player->name) {
+    free(player->name);
+  }
+
+  player->name = strdup(name);
 }
 
 void player_setLevel(player_t player, int level) {
@@ -55,10 +60,10 @@ void player_setInventory(player_t player, inventory_t inventory) {
   player->inventory = inventory;
 }
 
-player_t player_create(char *name, int level, int hp, int atk, int armor) {
+player_t player_create(const char *name, int level, int hp, int atk, int armor) {
   player_t player = (player_t)malloc(sizeof(sizeof(struct player_s)));
 
-  player_setName(player, name);
+  player_setName(player, strdup(name));
   player_setLevel(player, level);
   player_setHp(player, hp);
   player_setAtk(player, atk);
